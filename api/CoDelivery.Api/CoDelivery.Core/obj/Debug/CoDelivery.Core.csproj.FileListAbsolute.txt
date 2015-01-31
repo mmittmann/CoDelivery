@@ -1,0 +1,8 @@
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Core\bin\Debug\CoDelivery.Core.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Core\bin\Debug\CoDelivery.Core.pdb
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Core\obj\Debug\CoDelivery.Core.csprojResolveAssemblyReference.cache
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Core\obj\Debug\CoDelivery.Core.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Core\obj\Debug\CoDelivery.Core.pdb
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Core\bin\Debug\DropNet.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Core\bin\Debug\RestSharp.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Core\bin\Debug\RestSharp.xml
