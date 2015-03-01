@@ -2,73 +2,60 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DropNet;
-using DropNet.Models;
+using DropboxRestAPI;
 using Newtonsoft.Json;
-using RestSharp;
-using RestSharp.Deserializers;
-using RestSharp.Serializers;
 
 namespace CoDelivery.Core.Infra.Clients
 {
     public class DropBoxClient
     {
-        private readonly DropNetClient _dropnetClient;
+        private readonly Client _dropnetClient;
 
-        public DropBoxClient(IRepository repository)
+        public DropBoxClient()
         {
-            _dropnetClient = new DropNetClient("rgj1bdbeuc589gl", "cw5jo9a700c8d5v");
-        }
+            _dropnetClient = new Client(
+                new Options());
+            }
 
-        public void SetUserLoginCredentials(UserLogin userLogin)
+        public void SetUserLoginCredentials(string secret, string token)
         {
-            _dropnetClient.UserLogin = userLogin;
+            throw new NotImplementedException();
         }
 
         public string GetUrlToRequestToken()
         {
-            return _dropnetClient.BuildAuthorizeUrl();
+
+            throw new NotImplementedException();
         }
 
-        public UserLogin GetToken()
+        public void GetToken()
         {
-            return _dropnetClient.GetToken();
+
+            throw new NotImplementedException();
         }
 
-        public UserLogin GetAccessToken()
+        public void GetAccessToken()
         {
 
-
-            return _dropnetClient.GetAccessToken();
+            throw new NotImplementedException();
         }
 
         public bool IsConnected()
         {
-            return _dropnetClient.AccountInfo() != null;
+
+            throw new NotImplementedException();
         }
 
         public byte[] GetFile(string path)
         {
-            return _dropnetClient.GetFile(path);
+
+            throw new NotImplementedException();
         }
 
         public string GetFolderContent(string path)
         {
-            var metadata = _dropnetClient.GetMetaData(path);
-
-            return "";
+            throw new NotImplementedException();
         }
-    }
-
-    public interface IRepository<T>
-    {
-        void Save(T entity);
-        void Edit(int idEntity, T updatedEntity);
-        void Delete(int idEntity);
-
-        T GetSpecific(Func<T, bool> func);
-        List<T> GetALot(Func<T, bool> func);
-        List<T> GetAll();
     }
 
     public class FileRepository<T> : IRepository<T>
@@ -78,13 +65,13 @@ namespace CoDelivery.Core.Infra.Clients
 
         public FileRepository()
         {
-           
+
             _path = @"C:\FileRepository\DropNetClient.txt";
         }
 
         public void Save(T entity)
         {
-            File.AppendAllText(_path,  JsonConvert.SerializeObject(entity));
+            File.AppendAllText(_path, JsonConvert.SerializeObject(entity));
         }
 
         public void Edit(int idEntity, T updatedEntity)

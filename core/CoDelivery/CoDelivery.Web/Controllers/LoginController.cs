@@ -1,0 +1,85 @@
+﻿using System.Net;
+using System.Security.Claims;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Security;
+using AutoMapper;
+using CoDelivery.Core.Entities;
+using CoDelivery.Core.Repositories;
+using CoDelivery.Web.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
+
+namespace CoDelivery.Web.Controllers
+{
+    [AllowAnonymous]
+    public class LoginController : Controller
+    {
+        private readonly UserRepository _repository;
+
+        public LoginController(UserRepository repository)
+        {
+            _repository = repository;
+        }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(UserModel userModel)
+        {
+            var user = _repository.GetSpecific(u => u.UserName == userModel.User && u.Password == userModel.Password);
+
+            if (user != null)
+            {
+                var identity = new ClaimsIdentity(new[]
+                {
+                    new Claim(ClaimTypes.Name, user.Name),
+                    new Claim(ClaimTypes.Email, user.Email) 
+                }, "ApplicationCookie");
+
+                var ctx = Request.GetOwinContext();
+                var authManager = ctx.Authentication;
+
+                authManager.SignIn(new AuthenticationProperties { IsPersistent = true }, identity);
+
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            ModelState.AddModelError("User", "Usuário ou senha não conferem.");
+            return View();
+        }
+
+        public ActionResult SignUp()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SignUp(SignUpModel suModel)
+        {
+            Mapper.CreateMap<SignUpModel, UserEntity>().ForMember(m => m.UserName, a => a.MapFrom(mf => mf.User));
+            var user = Mapper.Map<UserEntity>(suModel);
+
+            _repository.Save(user);
+
+            ViewBag.Message = new { Type = "Success", Message = "Cadastrado com sucesso!" };
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Logout()
+        {
+            var ctx = Request.GetOwinContext();
+            var authManager = ctx.Authentication;
+
+            authManager.SignOut("ApplicationCookie");
+
+            return RedirectToAction("Index");
+        }
+
+
+    }
+}

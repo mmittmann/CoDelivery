@@ -61,3 +61,6 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\obj\Debug\CoDelivery.Api.csprojResolveAssemblyReference.cache
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\obj\Debug\CoDelivery.Api.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\obj\Debug\CoDelivery.Api.pdb
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\bin\CoDelivery.Core.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\bin\CoDelivery.Core.pdb
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\bin\DropboxRestAPI.dll

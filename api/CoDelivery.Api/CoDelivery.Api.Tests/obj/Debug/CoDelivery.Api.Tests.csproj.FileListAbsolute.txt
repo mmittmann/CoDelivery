@@ -26,7 +26,6 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\bin\Debug\System.Web.Http.Owin.dll
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\bin\Debug\DropNet.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\bin\Debug\RestSharp.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\bin\Debug\CoDelivery.Api.pdb
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\bin\Debug\CoDelivery.Core.pdb
@@ -55,3 +54,4 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.pdb
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api.Tests\bin\Debug\DropboxRestAPI.dll

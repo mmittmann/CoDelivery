@@ -1,0 +1,28 @@
+﻿@model List<CoDelivery.Core.Entities.IntegrationEntity>
+
+@{
+    ViewBag.Title = "Integrações";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h2>Integrações</h2></div>
+    
+
+    <table class="table table-hover table-striped">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IntegrationSystem.Name</td>
+                <td class="text-success">
+                    <i class="glyphicon glyphicon-check"></i> Ok
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="panel-footer">
+        <div class="col-md-2 col-md-offset-10">
+            <button class="btn btn-default">Voltar</button>
+            <button class="btn btn-success">Criar novo</button>
+        </div>
+    </div>
+</div>

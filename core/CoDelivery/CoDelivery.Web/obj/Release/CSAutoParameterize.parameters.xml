@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CoDeliveryContext-Web.config Connection String" description="CoDeliveryContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=CoDelivery;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\CoDelivery.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Murilo\\Projetos\\Faculdade\\CoDelivery\\api\\CoDelivery\.Api\\CoDelivery\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CoDeliveryContext']/@connectionString" />
+  </parameter>
+</parameters>

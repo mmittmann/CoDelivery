@@ -1,0 +1,27 @@
+﻿@model CoDelivery.Web.Models.UserModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@{
+    if (ViewBag.Message != null)
+    {
+        <p class="@ViewBag.Type">@ViewBag.Message</p>
+    }
+}
+
+<div class="col-md-4 col-md-offset-4">
+    <h2>Login</h2>
+    @using (Html.BeginForm())
+    {
+        <p>User</p>
+        @Html.TextBoxFor(m => m.User)
+
+        <p>Password</p>
+        @Html.TextBoxFor(m => m.Password)
+        
+        <input type="submit" value="Login" class="btn btn-primary"/>
+        <a href="/Login/SignUp" class="btn">Cadastrar-se</a>
+    }
+</div>
