@@ -1,44 +1,43 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Management.Automation;
+using CoDelivery.Core.CoreModels;
 using DropNet;
-using DropNet.Models;
-using Microsoft.Ajax.Utilities;
 
 namespace CoDelivery.Core.Infra.Clients
 {
     public class DropBoxClient
     {
         private DropNetClient _dropBoxClient;
-        private static string _apiToken = "nf09bmb4l99w4y1", _appSecret = "utm9gqplqdzvezy";
 
-        public string AccessToken { get; set; }
+        private static string
+            _apiToken = "nf09bmb4l99w4y1",
+            _appSecret = "utm9gqplqdzvezy";
+
         public string ApiSecret { get; set; }
+        public string AccessToken { get; set; }
 
         public DropBoxClient()
         {
             _dropBoxClient = new DropNetClient(_apiToken, _appSecret);
         }
 
-        public DropBoxClient(string accessToken, string userSecret)
+        public DropBoxClient(string userSecret, string accessToken)
         {
             _dropBoxClient = new DropNetClient(_apiToken, _appSecret, accessToken, userSecret, null);
 
         }
 
-        public string GetUrlToRequestToken()
+        public string GetUrlToRequestToken(string urlToCallback)
         {
-            return _dropBoxClient.GetTokenAndBuildUrl();
+            return _dropBoxClient.GetTokenAndBuildUrl(urlToCallback);
         }
 
         public void GetAccessToken()
         {
             var userLogin = _dropBoxClient.GetAccessToken();
-            AccessToken = userLogin.Token;
             ApiSecret = userLogin.Secret;
+            AccessToken = userLogin.Token;
         }
 
         public bool IsConnected()
@@ -65,6 +64,17 @@ namespace CoDelivery.Core.Infra.Clients
             var content = metaData.Contents;
 
             return content.Where(data => data.Is_Dir).Select(data => data.Path).ToList();
+        }
+
+        public Information GetInformation()
+        {
+            var information = _dropBoxClient.AccountInfo();
+
+            return new Information
+            {
+                Name = information.display_name,
+                Email = information.email
+            };
         }
     }
 }

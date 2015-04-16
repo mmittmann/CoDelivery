@@ -20,7 +20,7 @@ namespace CoDelivery.IntegrationTests
         {
             _dropBoxClient = new DropBoxClient();
 
-            var url = _dropBoxClient.GetUrlToRequestToken();
+            var url = _dropBoxClient.GetUrlToRequestToken("");
 
             _dropBoxClient.GetAccessToken();
         }

@@ -47,6 +47,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="DropNet, Version=1.9.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DropNet.1.9.12.0\lib\net40\DropNet.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
@@ -196,10 +200,19 @@
     <Compile Include="Configs\Configs.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DropboxController.cs" />
+    <Compile Include="Controllers\FtpController.cs" />
+    <Compile Include="Controllers\GitHubController.cs" />
+    <Compile Include="Models\DashboardSpecificModel.cs" />
+    <Compile Include="Models\FtpModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntegrationController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
+    <Compile Include="Models\DashboardModel.cs" />
+    <Compile Include="Models\GitHubModel.cs" />
     <Compile Include="Models\IntegrationModel.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Models\RecipeModel.cs" />
     <Compile Include="Models\SignUpModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -215,6 +228,7 @@
     <Content Include="Assets\bower-grunt.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\us.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -228,6 +242,16 @@
     <Content Include="Views\Shared\DisplayTemplates\String.cshtml" />
     <Content Include="Views\Integration\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Recipe\Index.cshtml" />
+    <Content Include="Views\Recipe\Create.cshtml" />
+    <Content Include="Views\Integration\Create.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Dropbox\Index.cshtml" />
+    <Content Include="Views\Ftp\Index.cshtml" />
+    <Content Include="Views\GitHub\Index.cshtml" />
+    <Content Include="Views\Integration\Delete.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -270,18 +294,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
@@ -306,6 +318,10 @@
     <ProjectReference Include="..\CoDelivery.Core\CoDelivery.Core.csproj">
       <Project>{B8EC0A56-173B-4140-841E-DB4646CDBFA6}</Project>
       <Name>CoDelivery.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoDelivery.IntegrationTests\CoDelivery.IntegrationTests.csproj">
+      <Project>{2281B78B-A666-41E0-8BFF-D008B8A4739E}</Project>
+      <Name>CoDelivery.IntegrationTests</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

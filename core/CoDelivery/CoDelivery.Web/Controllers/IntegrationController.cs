@@ -1,28 +1,69 @@
-﻿using System.Web.Mvc;
-using CoDelivery.Core.Repositories;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using CoDelivery.Core.Entities;
+using CoDelivery.Core.Infra.IntegrationSystems;
 using CoDelivery.Web.Models;
 
 namespace CoDelivery.Web.Controllers
 {
-    public class IntegrationController : Controller
+    public class IntegrationController : AppController
     {
-        private readonly IntegrationRepository _integrationRepository;
+        private readonly CoDeliveryContext _context;
 
-        public IntegrationController(IntegrationRepository integrationRepository)
+        public IntegrationController(CoDeliveryContext context)
         {
-            _integrationRepository = integrationRepository;
+            _context = context;
         }
 
         public ActionResult Index()
         {
-            var integrations = _integrationRepository.GetALot(i => i.User.Name == User.Identity.Name);
+            var user = _context.Users.GetByUserName(UserName);
+            var integrations = new List<Integration>();
 
-            return View(integrations);
+            if (user != null && user.Integrations != null)
+                integrations = user.Integrations.ToList();
+
+            return View(integrations.ToList());
         }
 
-        public ActionResult Create(IntegrationModel model)
+        public ActionResult Create()
         {
-            return null;
+            return View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var integration = _context.Integrations.FirstOrDefault(i => i.Id == id);
+
+            return View(integration);
+        }
+
+        [HttpPost]
+        public ActionResult ConfirmDelete(int id)
+        {
+            var integration = _context.Integrations.FirstOrDefault(i => i.Id == id);
+
+            _context.Integrations.Remove(integration);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetConfigDetails(int id)
+        {
+            var integration = _context.Integrations.GetById(id);
+
+            if (integration.User.UserName != this.UserName)
+                return Json(new { Success = false, Folders = false });
+
+            var configs = integration.Settings;
+
+            var integrationSystem = new DropBoxIntegration(configs);
+
+            var folders = integration.GetFolders(integrationSystem, "/");
+
+            return Json(new { Success = true, Folders = folders }, JsonRequestBehavior.AllowGet);
         }
     }
 }

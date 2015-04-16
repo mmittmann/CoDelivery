@@ -132,3 +132,6 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\System.Web.Http.Owin.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\RestSharp.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\obj\Debug\CoDelivery.Api.pdb
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\Ftp.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\Ftp.xml
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\AutoMapper.Net4.dll

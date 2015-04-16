@@ -1,13 +1,10 @@
-﻿using System.Net;
+﻿using System.Linq;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 using AutoMapper;
 using CoDelivery.Core.Entities;
-using CoDelivery.Core.Repositories;
 using CoDelivery.Web.Models;
-using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
 namespace CoDelivery.Web.Controllers
@@ -15,11 +12,11 @@ namespace CoDelivery.Web.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
-        private readonly UserRepository _repository;
+        private readonly CoDeliveryContext _context;
 
-        public LoginController(UserRepository repository)
+        public LoginController(CoDeliveryContext context)
         {
-            _repository = repository;
+            _context = context;
         }
 
         public ActionResult Index()
@@ -30,14 +27,18 @@ namespace CoDelivery.Web.Controllers
         [HttpPost]
         public ActionResult Index(UserModel userModel)
         {
-            var user = _repository.GetSpecific(u => u.UserName == userModel.User && u.Password == userModel.Password);
+            if (!ModelState.IsValid)
+                return View(userModel);
+
+            var user = _context.Users.FirstOrDefault(u => u.UserName == userModel.User && u.Password == userModel.Password);
 
             if (user != null)
             {
                 var identity = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.Name, user.Name),
-                    new Claim(ClaimTypes.Email, user.Email) 
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim(ClaimTypes.NameIdentifier, user.UserName)
                 }, "ApplicationCookie");
 
                 var ctx = Request.GetOwinContext();
@@ -60,10 +61,14 @@ namespace CoDelivery.Web.Controllers
         [HttpPost]
         public ActionResult SignUp(SignUpModel suModel)
         {
-            Mapper.CreateMap<SignUpModel, UserEntity>().ForMember(m => m.UserName, a => a.MapFrom(mf => mf.User));
-            var user = Mapper.Map<UserEntity>(suModel);
+            if (!ModelState.IsValid)
+                return View(suModel);
 
-            _repository.Save(user);
+            Mapper.CreateMap<SignUpModel, User>().ForMember(m => m.UserName, a => a.MapFrom(mf => mf.User));
+            var user = Mapper.Map<User>(suModel);
+
+            _context.Users.Add(user);
+            _context.SaveChanges();
 
             ViewBag.Message = new { Type = "Success", Message = "Cadastrado com sucesso!" };
 

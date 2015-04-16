@@ -1,0 +1,30 @@
+﻿@model List<CoDelivery.Web.Models.RecipeModel>
+
+@{
+    ViewBag.Title = "Receitas";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Receitas</h2>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            @foreach (var item in Model)
+            {
+                <td>@item.Name</td>
+                <td>
+                    <a href="/recipe/run/@item.Id" class="btn btn-success">Rodar</a>
+                </td>
+                <td>
+                    <a href="/recipe/excluir/@item.Id" class="btn btn-danger">Excluir</a>
+                </td>
+            }
+        </tr>
+    </table>
+
+    <div class="panel-footer text-right">
+        <a href="/Dashboard" class="btn btn-default">Voltar</a>
+        <a href="/Recipe/Create" class="btn btn-success">Criar nova</a>
+    </div>
+</div>

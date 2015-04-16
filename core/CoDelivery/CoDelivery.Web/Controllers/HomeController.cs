@@ -3,10 +3,13 @@
 namespace CoDelivery.Web.Controllers
 {
     [AllowAnonymous]
-    public class HomeController : Controller
+    public class HomeController : AppController
     {
         public ActionResult Index()
         {
+            if(User.Identity.IsAuthenticated)
+                return RedirectToAction("Index", "Dashboard");
+
             return View();
         }
 
@@ -24,6 +27,7 @@ namespace CoDelivery.Web.Controllers
         {
             return View();
         }
+
 
     }
 }

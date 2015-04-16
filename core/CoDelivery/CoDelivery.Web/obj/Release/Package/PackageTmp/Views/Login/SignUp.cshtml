@@ -8,18 +8,13 @@
 
 @using (Html.BeginForm())
 {
-    <p>Nome</p>
-    @Html.TextBoxFor(t => t.Name)
+        @Html.EditorFor(t => t.Name) 
+        @Html.EditorFor(t => t.Email)
+        @Html.EditorFor(t => t.User)
+        @Html.EditorFor(t => t.Password)
 
-    <p>Email</p>
-    @Html.TextBoxFor(t => t.Email)
-
-    <p>User</p>
-    @Html.TextBoxFor(t => t.User)
-
-    <p>Password</p>
-    @Html.PasswordFor(t => t.Password)
-    <br/>
-    <input type="submit" value="Cadastrar" class="btn btn-success"/>
-    <a href="/Login/Index" class="btn">Voltar</a>
+    <div class="form-group">
+        <a href="/Login/Index" class="btn">Voltar</a>
+        <input type="submit" value="Cadastrar" class="btn btn-success" />
+    </div>
 }

@@ -1,0 +1,17 @@
+﻿@model CoDelivery.Core.Entities.Integration
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Deseja realmente excluir?</h2>
+
+@using (Html.BeginForm("ConfirmDelete", "Integration", FormMethod.Post))
+{
+    <p>Deseja excluir a integração de nome <b>@Model.Name</b></p>
+    
+    @Html.HiddenFor(i => i.Id)
+    
+    <a href="/Integration" class="btn btn-default">Voltar</a>
+    <input type="submit" value="Excluir" class="btn btn-danger"/>
+}

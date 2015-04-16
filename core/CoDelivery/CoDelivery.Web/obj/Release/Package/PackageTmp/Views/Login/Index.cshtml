@@ -15,13 +15,17 @@
     <h2>Login</h2>
     @using (Html.BeginForm())
     {
-        <p>User</p>
-        @Html.TextBoxFor(m => m.User)
-
+        <div class="form-group">
+            <p>User</p>
+            @Html.TextBoxFor(m => m.User)
+        </div>
+    <div class="form-group">
         <p>Password</p>
-        @Html.TextBoxFor(m => m.Password)
-        
-        <input type="submit" value="Login" class="btn btn-primary"/>
-        <a href="/Login/SignUp" class="btn">Cadastrar-se</a>
+        @Html.PasswordFor(m => m.Password)
+    </div>
+        <div class="form-group">
+            <a href="/Login/SignUp" class="btn">Cadastrar-se</a>
+            <input type="submit" value="Login" class="btn btn-primary" />
+    </div>
     }
 </div>

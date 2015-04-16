@@ -1,0 +1,100 @@
+﻿@using CoDelivery.Web.Models
+@model RecipeModel
+
+@{
+    ViewBag.Title = "Criar receita";
+}
+
+<h2>Criar nova receita:</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-3">
+            @Html.EditorFor(m => m.Name)
+        </div>
+        <div class="col-md-3">
+            <label>De</label>
+            <select class="form-control" id="integration-from">
+                <option>--Selecione a integração--</option>
+
+                @foreach (var item in (List<IntegrationModel>)ViewBag.Integrations)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <hr />
+            <div>
+                <select class="hidden" id="integration-details-from" class="form-control"></select>
+            </div>
+        </div>
+
+        <div class="col-md-1">--></div>
+
+        <div class="col-md-3">
+            <label>Para</label>
+            <select class="form-control" id="integration-to">
+                <option>--Selecione a integração--</option>
+
+                @foreach (var item in (List<IntegrationModel>)ViewBag.Integrations)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <hr />
+            <div>
+                <select class="hidden" id="integration-details-to" class="form-control"></select>
+            </div>
+        </div>
+    </div>
+
+    @Html.ActionLink("Voltar", "Index", "Recipe", new { @class = "btn btn-default" })
+    <input type="submit" value="Criar" class="btn btn-primary" />
+}
+
+
+@section scripts{
+    <script>
+        var CoDelivery = {
+            getIntegrationDetails: function (integrationId) {
+                var xhr = $.getJSON("/integration/getconfigdetails/", { id: integrationId });
+                xhr.done(function (data) {
+                    return data.Folders;
+                });
+                xhr.fail(function () {
+                    return [];
+                });
+            }
+        }
+
+        $('#integration-from').change(function () {
+            var integrationId = $(this).val();
+
+            var folders = CoDelivery.getIntegrationDetails(integrationId);
+            console.log(folders);
+
+            for (var i = 0; i < folders.length; i++) {
+                console.log(folders[item]);
+                $("#integration-details").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
+            }
+            $("#integration-details-from").removeClass('hidden').show();
+
+        });
+
+        $('#integration-to').change(function () {
+            var integrationId = $(this).val();
+
+            var folders = CoDelivery.getIntegrationDetails(integrationId);
+
+            console.log(folders);
+
+            for (var i = 0; i < folders.length; i++) {
+                console.log(folders[item]);
+                $("#integration-details").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
+            }
+            $("#integration-details-to").removeClass('hidden').show();
+
+        });
+    </script>
+}
+

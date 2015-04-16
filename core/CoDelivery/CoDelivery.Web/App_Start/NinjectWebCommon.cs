@@ -1,7 +1,7 @@
 using System;
+using System.Data.Entity;
 using System.Web;
 using CoDelivery.Core.Entities;
-using CoDelivery.Core.Repositories;
 using CoDelivery.Web;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
@@ -62,10 +62,7 @@ namespace CoDelivery.Web
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<CoDeliveryContext>().To<CoDeliveryContext>();
-            kernel.Bind<UserRepository>().To<UserRepository>();
-            kernel.Bind<IntegrationRepository>().To<IntegrationRepository>();
-            kernel.Bind<IntegrationSystemRepository>().To<IntegrationSystemRepository>();
+            kernel.Bind<DbContext>().To<CoDeliveryContext>();
         }        
     }
 }

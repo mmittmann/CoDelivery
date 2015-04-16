@@ -8,22 +8,10 @@
 
 @using (Html.BeginForm())
 {
-    <div class="form-group">
-        <p>Nome</p>
-        @Html.DisplayFor(t => t.Name) 
-    </div>
-    <div class="form-group">
-        <p>Email</p>
-        @Html.DisplayFor(t => t.Email)
-    </div>
-    <div class="form-group">
-        <p>User</p>
-        @Html.DisplayFor(t => t.User)
-    </div>
-    <div class="form-group">
-        <p>Password</p>
-        @Html.DisplayFor(t => t.Password)
-    </div>
+        @Html.EditorFor(t => t.Name) 
+        @Html.EditorFor(t => t.Email)
+        @Html.EditorFor(t => t.User)
+        @Html.EditorFor(t => t.Password)
 
     <div class="form-group">
         <a href="/Login/Index" class="btn">Voltar</a>

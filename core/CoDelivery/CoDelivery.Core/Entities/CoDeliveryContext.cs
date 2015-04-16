@@ -5,9 +5,15 @@ namespace CoDelivery.Core.Entities
 {
     public class CoDeliveryContext : DbContext
     {
-        public DbSet<UserEntity> UserEntities { get; set; } 
-        public DbSet<IntegrationSystemEntity> IntegrationSystems { get; set; } 
-        public DbSet<IntegrationEntity> Integrations { get; set; } 
+        public CoDeliveryContext()
+            : base()
+        {
+            Database.SetInitializer(new EntitiesInitializer());
+        }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<Integration> Integrations { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

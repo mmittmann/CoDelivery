@@ -111,3 +111,6 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tes
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.pdb
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\Ftp.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\Ftp.xml
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\AutoMapper.Net4.dll

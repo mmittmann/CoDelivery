@@ -37,6 +37,12 @@
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.2.0.0\lib\2.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharp.GitHub">
+      <HintPath>..\packages\CSharp.GitHub.0.1.4500.22863\lib\net40\CSharp.GitHub.dll</HintPath>
+    </Reference>
     <Reference Include="DropNet">
       <HintPath>..\packages\DropNet.1.9.12.0\lib\net40\DropNet.dll</HintPath>
     </Reference>
@@ -50,13 +56,26 @@
     <Reference Include="EntityFramework.SqlServerCompact">
       <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.2\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
     </Reference>
+    <Reference Include="Ftp">
+      <HintPath>..\packages\Ftp.dll.2.0.15041.1147\lib\Ftp.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\packages\SSH.NET.2013.4.7\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Spring.Rest">
+      <HintPath>..\packages\Spring.Rest.1.1.0\lib\net40\Spring.Rest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spring.Social.Core">
+      <HintPath>..\packages\Spring.Social.Core.1.0.0\lib\net40\Spring.Social.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -64,6 +83,10 @@
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Management.Automation.6.1.7601.17515\lib\net45\System.Management.Automation.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
@@ -78,33 +101,77 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\CoDeliveryContext.cs" />
+    <Compile Include="Entities\ContextExtension.cs" />
+    <Compile Include="Entities\EntitiesInitializer.cs" />
     <Compile Include="Entities\Integration.cs" />
+    <Compile Include="Entities\IntegrationRecipe.cs" />
     <Compile Include="Entities\IntegrationSystem.cs" />
-    <Compile Include="Entities\UserEntity.cs" />
+    <Compile Include="Entities\Recipe.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Infra\Clients\DropBoxClient.cs" />
-    <Compile Include="Infra\Clients\FileRepository.cs" />
-    <Compile Include="Infra\Clients\IRepository.cs" />
-    <Compile Include="Migrations\201502120443283_DatabaseCreated.cs" />
-    <Compile Include="Migrations\201502120443283_DatabaseCreated.Designer.cs">
-      <DependentUpon>201502120443283_DatabaseCreated.cs</DependentUpon>
+    <Compile Include="Infra\Clients\FtpClient.cs" />
+    <Compile Include="Infra\Clients\GitClient.cs" />
+    <Compile Include="CoreModels\Information.cs" />
+    <Compile Include="Infra\Clients\PowerShellClient.cs" />
+    <Compile Include="Infra\IntegrationSystems\FtpIntegration.cs" />
+    <Compile Include="Infra\IntegrationSystems\GitHubIntegration.cs" />
+    <Compile Include="Infra\IntegrationSystems\IIntegrationSystem.cs" />
+    <Compile Include="Infra\IntegrationSystems\DropBoxIntegration.cs" />
+    <Compile Include="Infra\IntegrationSystems\IntegrationSystemFactory.cs" />
+    <Compile Include="Migrations\201503290547212_Adicionada a propriedade NAME nas integrações.cs" />
+    <Compile Include="Migrations\201503290547212_Adicionada a propriedade NAME nas integrações.Designer.cs">
+      <DependentUpon>201503290547212_Adicionada a propriedade NAME nas integrações.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502120452038_DatabaseCreated2.cs" />
-    <Compile Include="Migrations\201502120452038_DatabaseCreated2.Designer.cs">
-      <DependentUpon>201502120452038_DatabaseCreated2.cs</DependentUpon>
+    <Compile Include="Migrations\201504060354045_CriacaoTabelaMigrationRecipe.cs" />
+    <Compile Include="Migrations\201504060354045_CriacaoTabelaMigrationRecipe.Designer.cs">
+      <DependentUpon>201504060354045_CriacaoTabelaMigrationRecipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502131316158_Add name and email to user.cs" />
-    <Compile Include="Migrations\201502131316158_Add name and email to user.Designer.cs">
-      <DependentUpon>201502131316158_Add name and email to user.cs</DependentUpon>
+    <Compile Include="Migrations\Arriba.cs" />
+    <Compile Include="Migrations\Arriba.Designer.cs">
+      <DependentUpon>Arriba.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502280425192_Rename members.cs" />
-    <Compile Include="Migrations\201502280425192_Rename members.Designer.cs">
-      <DependentUpon>201502280425192_Rename members.cs</DependentUpon>
+    <Compile Include="Migrations\Arriba2.cs" />
+    <Compile Include="Migrations\Arriba2.Designer.cs">
+      <DependentUpon>Arriba2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Arriba3.cs" />
+    <Compile Include="Migrations\Arriba3.Designer.cs">
+      <DependentUpon>Arriba3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DatabaseCreated.cs" />
+    <Compile Include="Migrations\DatabaseCreated.Designer.cs">
+      <DependentUpon>DatabaseCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DatabaseCreated2.cs" />
+    <Compile Include="Migrations\DatabaseCreated2.Designer.cs">
+      <DependentUpon>DatabaseCreated2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Addnameandemailtouser.cs" />
+    <Compile Include="Migrations\Addnameandemailtouser.Designer.cs">
+      <DependentUpon>Addnameandemailtouser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Renamemembers.cs" />
+    <Compile Include="Migrations\Renamemembers.Designer.cs">
+      <DependentUpon>Renamemembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\addrecipe.cs" />
+    <Compile Include="Migrations\addrecipe.Designer.cs">
+      <DependentUpon>addrecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\addrecipe2.cs" />
+    <Compile Include="Migrations\addrecipe2.Designer.cs">
+      <DependentUpon>addrecipe2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\addrecipe3.cs" />
+    <Compile Include="Migrations\addrecipe3.Designer.cs">
+      <DependentUpon>addrecipe3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Arriba4.cs" />
+    <Compile Include="Migrations\Arriba4.Designer.cs">
+      <DependentUpon>Arriba4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IntegrationRepository.cs" />
-    <Compile Include="Repositories\IntegrationSystemRepository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -113,18 +180,49 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502120443283_DatabaseCreated.resx">
-      <DependentUpon>201502120443283_DatabaseCreated.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503290547212_Adicionada a propriedade NAME nas integrações.resx">
+      <DependentUpon>201503290547212_Adicionada a propriedade NAME nas integrações.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502120452038_DatabaseCreated2.resx">
-      <DependentUpon>201502120452038_DatabaseCreated2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504060354045_CriacaoTabelaMigrationRecipe.resx">
+      <DependentUpon>201504060354045_CriacaoTabelaMigrationRecipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502131316158_Add name and email to user.resx">
-      <DependentUpon>201502131316158_Add name and email to user.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\DatabaseCreated.resx">
+      <DependentUpon>DatabaseCreated.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502280425192_Rename members.resx">
-      <DependentUpon>201502280425192_Rename members.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\DatabaseCreated2.resx">
+      <DependentUpon>DatabaseCreated2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Addnameandemailtouser.resx">
+      <DependentUpon>Addnameandemailtouser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Renamemembers.resx">
+      <DependentUpon>Renamemembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\addrecipe.resx">
+      <DependentUpon>addrecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\addrecipe2.resx">
+      <DependentUpon>addrecipe2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\addrecipe3.resx">
+      <DependentUpon>addrecipe3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Arriba.resx">
+      <DependentUpon>Arriba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Arriba2.resx">
+      <DependentUpon>Arriba2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Arriba3.resx">
+      <DependentUpon>Arriba3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Arriba4.resx">
+      <DependentUpon>Arriba4.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Spring.Rest.txt" />
+    <Content Include="App_Readme\Spring.Social.Core.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

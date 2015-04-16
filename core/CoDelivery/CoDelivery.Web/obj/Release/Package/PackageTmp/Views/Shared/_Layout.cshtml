@@ -25,6 +25,33 @@
                     <li>@Html.ActionLink("Sobre", "About", "Home")</li>
                     <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+
+
+                    @{
+                        if (User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <span class="badge" style="margin-top: 15px;">
+                                    Olá, @User.Identity.Name
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Logout", "Logout", "Login")
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                @Html.ActionLink("Login", "Index", "Login")
+                            </li>
+                        }
+                    }
+
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

@@ -68,9 +68,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="RepositoryTest.cs" />
+    <Compile Include="GitIntergrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DropBoxIntegrationTest.cs" />
+    <Compile Include="FtpClientTesst.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoDelivery.Core\CoDelivery.Core.csproj">

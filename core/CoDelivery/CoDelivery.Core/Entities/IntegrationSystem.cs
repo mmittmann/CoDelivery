@@ -1,8 +1,9 @@
 ﻿namespace CoDelivery.Core.Entities
 {
-    public class IntegrationSystemEntity
+    public enum IntegrationSystem
     {
-        public int Id { get; set; } 
-        public string Name { get; set; }
+        DropBox,
+        Ftp,
+        GitHub
     }
 }

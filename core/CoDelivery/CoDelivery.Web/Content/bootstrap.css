@@ -3625,6 +3625,9 @@ input[type="button"].btn-block {
   width: 1%;
 }
 
+
+
+
 [data-toggle="buttons"] > .btn > input[type="radio"],
 [data-toggle="buttons"] > .btn > input[type="checkbox"] {
   display: none;
@@ -6814,3 +6817,4 @@ td.visible-print {
     display: none !important;
   }
 }
+

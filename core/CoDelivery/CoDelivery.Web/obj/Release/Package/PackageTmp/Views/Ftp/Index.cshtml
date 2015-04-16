@@ -1,0 +1,18 @@
+﻿@model CoDelivery.Web.Models.FtpModel
+
+@{
+    ViewBag.Title = "FTP Account";
+}
+
+<h2>Conta FTP</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(model => model.Name)
+    @Html.EditorFor(model => model.Host)
+    @Html.EditorFor(model => model.User)
+    @Html.EditorFor(model => model.Password)
+    @Html.EditorFor(model => model.Port)
+    <a href="/Home" class="btn btn-default">Voltar</a>
+    <input type="submit" value="Criar" class="btn btn-primary" />
+}
