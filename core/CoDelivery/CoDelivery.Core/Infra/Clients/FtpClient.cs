@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Limilabs.FTP.Client;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Net.Sockets;
-using Limilabs.FTP.Client;
+using System.Net;
 
 namespace CoDelivery.Core.Infra.Clients
 {
@@ -9,26 +10,32 @@ namespace CoDelivery.Core.Infra.Clients
     {
         private readonly Ftp _ftp;
 
-        public FtpClient(string host, string user, string password, int port = 21)
+        public FtpClient(string host, string user, string password, int port)
         {
             _ftp = new Ftp();
+            _ftp.ConnectSSL(host, port);
             _ftp.Login(user, password);
-            _ftp.Connect(host, port);
+
         }
+
+        private readonly List<string> _folders = new List<string>();
+
 
         public List<string> GetFolders(string path)
         {
-            var folders = new List<string>(); 
             var ftpList = _ftp.GetList(path);
 
             ftpList.ForEach(f =>
             {
                 if (f.IsFolder)
-                    folders.Add(f.Name);
+                {
+                    var folderName = path + f.Name + "/";
+                    _folders.Add(folderName);
+                    GetFolders(folderName);
+                }
             });
+            return _folders;
 
-            return folders;
         }
-
     }
 }

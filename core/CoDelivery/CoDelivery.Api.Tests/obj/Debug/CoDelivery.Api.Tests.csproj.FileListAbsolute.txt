@@ -83,6 +83,7 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tes
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\System.Web.Http.Owin.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\Ftp.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\RestSharp.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\CoDelivery.Api.pdb
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\CoDelivery.Core.pdb
@@ -107,10 +108,8 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tes
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\EntityFramework.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\System.Web.Http.Owin.xml
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\Ftp.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\RestSharp.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\obj\Debug\CoDelivery.Api.Tests.pdb
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\Ftp.dll
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\Ftp.xml
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api.Tests\bin\Debug\AutoMapper.Net4.dll

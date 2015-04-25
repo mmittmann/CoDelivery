@@ -6,7 +6,8 @@ namespace CoDelivery.Core.Entities
     {
         protected override void Seed(CoDeliveryContext context)
         {
-           
+            context.Users.Add(new User("mmittmann", "123qwe!@#QWE", "murilo@mittmann.me", "Murilo"));
+            context.SaveChanges();
 
             base.Seed(context);
         }

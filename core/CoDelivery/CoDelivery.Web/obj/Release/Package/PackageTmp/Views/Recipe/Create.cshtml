@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-3">
             <label>De</label>
-            <select class="form-control" id="integration-from">
+            <select class="form-control" id="integration-from" name="IntegrationSettings[0].key">
                 <option>--Selecione a integração--</option>
 
                 @foreach (var item in (List<IntegrationModel>)ViewBag.Integrations)
@@ -25,7 +25,7 @@
             </select>
             <hr />
             <div>
-                <select class="hidden" id="integration-details-from" class="form-control"></select>
+                <select class="hidden form-control" id="integration-details-from" name="integrationsettings[0].value"></select>
             </div>
         </div>
 
@@ -33,7 +33,7 @@
 
         <div class="col-md-3">
             <label>Para</label>
-            <select class="form-control" id="integration-to">
+            <select class="form-control" id="integration-to" name="integrationsettings[1].key">
                 <option>--Selecione a integração--</option>
 
                 @foreach (var item in (List<IntegrationModel>)ViewBag.Integrations)
@@ -43,7 +43,7 @@
             </select>
             <hr />
             <div>
-                <select class="hidden" id="integration-details-to" class="form-control"></select>
+                <select class="hidden form-control" id="integration-details-to" name="integrationsettings[1].value"></select>
             </div>
         </div>
     </div>
@@ -57,42 +57,43 @@
     <script>
         var CoDelivery = {
             getIntegrationDetails: function (integrationId) {
-                var xhr = $.getJSON("/integration/getconfigdetails/", { id: integrationId });
-                xhr.done(function (data) {
-                    return data.Folders;
-                });
-                xhr.fail(function () {
-                    return [];
-                });
+                
             }
         }
 
         $('#integration-from').change(function () {
             var integrationId = $(this).val();
 
-            var folders = CoDelivery.getIntegrationDetails(integrationId);
-            console.log(folders);
-
-            for (var i = 0; i < folders.length; i++) {
-                console.log(folders[item]);
-                $("#integration-details").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
-            }
-            $("#integration-details-from").removeClass('hidden').show();
-
+            var folders = [];
+            $.getJSON("/integration/getconfigdetails/", { id: integrationId })
+            .done(function (data) {
+                folders = data.Folders;
+                for (var i = 0; i < folders.length; i++) {
+                    $("#integration-details-from").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
+                }
+                $("#integration-details-from").removeClass('hidden').show();
+            })
+            .fail(function () {
+                folders = [];
+            });
         });
 
         $('#integration-to').change(function () {
             var integrationId = $(this).val();
 
-            var folders = CoDelivery.getIntegrationDetails(integrationId);
+            var folders = [];
+            var xhr = $.getJSON("/integration/getconfigdetails/", { id: integrationId });
+            xhr.done(function (data) {
+                folders = data.Folders;
 
-            console.log(folders);
-
-            for (var i = 0; i < folders.length; i++) {
-                console.log(folders[item]);
-                $("#integration-details").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
-            }
-            $("#integration-details-to").removeClass('hidden').show();
+                for (var i = 0; i < folders.length; i++) {
+                    $("#integration-details-to").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
+                }
+                $("#integration-details-to").removeClass('hidden').show();
+            });
+            xhr.fail(function () {
+                folders = [];
+            });
 
         });
     </script>

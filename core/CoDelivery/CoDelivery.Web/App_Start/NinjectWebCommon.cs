@@ -2,6 +2,7 @@ using System;
 using System.Data.Entity;
 using System.Web;
 using CoDelivery.Core.Entities;
+using CoDelivery.Core.Infra.IntegrationSystems;
 using CoDelivery.Web;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
@@ -56,13 +57,10 @@ namespace CoDelivery.Web
             }
         }
 
-        /// <summary>
-        /// Load your modules or register your services here!
-        /// </summary>
-        /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<DbContext>().To<CoDeliveryContext>();
+            kernel.Bind<IntegrationSystemFactory>().To<IntegrationSystemFactory>();
         }        
     }
 }

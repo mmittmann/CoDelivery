@@ -64,8 +64,6 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\bin\CoDelivery.Core.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\bin\CoDelivery.Core.pdb
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\api\CoDelivery.Api\CoDelivery.Api\bin\DropboxRestAPI.dll
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\obj\Debug\CoDelivery.Api.csprojResolveAssemblyReference.cache
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\obj\Debug\CoDelivery.Api.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\CoDelivery.Api.dll.config
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\CoDelivery.Api.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\CoDelivery.Api.pdb
@@ -101,6 +99,7 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\System.Web.WebPages.Razor.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\WebGrease.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\DropNet.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\Ftp.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\RestSharp.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\CoDelivery.Core.pdb
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\EntityFramework.xml
@@ -130,8 +129,8 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\System.Web.Http.Owin.xml
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\RestSharp.xml
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\obj\Debug\CoDelivery.Api.pdb
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\Ftp.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\Ftp.xml
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\AutoMapper.Net4.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\bin\RestSharp.xml
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\obj\Debug\CoDelivery.Api.csprojResolveAssemblyReference.cache
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\obj\Debug\CoDelivery.Api.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Api\obj\Debug\CoDelivery.Api.pdb

@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-3">
             <label>De</label>
-            <select class="form-control" id="integration-from">
+            <select class="form-control" id="integration-from" name="IntegrationSettings[0].key">
                 <option>--Selecione a integração--</option>
 
                 @foreach (var item in (List<IntegrationModel>)ViewBag.Integrations)
@@ -25,15 +25,23 @@
             </select>
             <hr />
             <div>
-                <select class="hidden" id="integration-details-from" class="form-control"></select>
+                <select class="hidden form-control" id="integration-details-from" name="integrationsettings[0].value"></select>
+                <br/>
+                <div class="loader hide" id="loader-from"></div>
             </div>
         </div>
 
-        <div class="col-md-1">--></div>
+        <div class="col-md-1">
+            <br/>
+            <br/>
+            <p class="text-center">
+                <i class="glyphicon glyphicon-arrow-right"></i>
+            </p>
+        </div>
 
         <div class="col-md-3">
             <label>Para</label>
-            <select class="form-control" id="integration-to">
+            <select class="form-control" id="integration-to" name="integrationsettings[1].key">
                 <option>--Selecione a integração--</option>
 
                 @foreach (var item in (List<IntegrationModel>)ViewBag.Integrations)
@@ -43,7 +51,9 @@
             </select>
             <hr />
             <div>
-                <select class="hidden" id="integration-details-to" class="form-control"></select>
+                <select class="hidden form-control" id="integration-details-to" name="integrationsettings[1].value"></select>
+                <br/>
+                <div class="loader hide" id="loader-to"></div>
             </div>
         </div>
     </div>
@@ -55,44 +65,57 @@
 
 @section scripts{
     <script>
-        var CoDelivery = {
-            getIntegrationDetails: function (integrationId) {
-                var xhr = $.getJSON("/integration/getconfigdetails/", { id: integrationId });
-                xhr.done(function (data) {
-                    return data.Folders;
-                });
-                xhr.fail(function () {
-                    return [];
-                });
-            }
-        }
+
+        
 
         $('#integration-from').change(function () {
+            $('#loader-from').removeClass('hide').show(); 
+
+
             var integrationId = $(this).val();
 
-            var folders = CoDelivery.getIntegrationDetails(integrationId);
-            console.log(folders);
+            var folders = [];
+            $.getJSON("/integration/getconfigdetails/", { id: integrationId })
+            .done(function (data) {
+                $('#integration-details-from').html("--Selecione a integração--");
 
-            for (var i = 0; i < folders.length; i++) {
-                console.log(folders[item]);
-                $("#integration-details").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
-            }
-            $("#integration-details-from").removeClass('hidden').show();
 
+                folders = data.Folders;
+                for (var i = 0; i < folders.length; i++) {
+                    $("#integration-details-from").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
+                }
+                $("#integration-details-from").removeClass('hidden').show();
+            })
+            .fail(function () {
+                folders = [];
+            }).always(function () {
+                $('#loader-from').hide();
+            });
         });
 
         $('#integration-to').change(function () {
+            $('#loader-to').removeClass('hide').show();
+
             var integrationId = $(this).val();
 
-            var folders = CoDelivery.getIntegrationDetails(integrationId);
+            var folders = [];
+            var xhr = $.getJSON("/integration/getconfigdetails/", { id: integrationId });
+            xhr.done(function (data) {
+                $('#integration-details-to').html("--Selecione a integração--");
 
-            console.log(folders);
+                folders = data.Folders;
 
-            for (var i = 0; i < folders.length; i++) {
-                console.log(folders[item]);
-                $("#integration-details").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
-            }
-            $("#integration-details-to").removeClass('hidden').show();
+                for (var i = 0; i < folders.length; i++) {
+                    $("#integration-details-to").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
+                }
+                $("#integration-details-to").removeClass('hidden').show();
+            });
+            xhr.fail(function() {
+                folders = [];
+            });
+            xhr.always(function() {
+                $('#loader-to').hide();
+            });
 
         });
     </script>

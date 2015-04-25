@@ -10,10 +10,12 @@ namespace CoDelivery.Web.Controllers
     public class IntegrationController : AppController
     {
         private readonly CoDeliveryContext _context;
+        private readonly IntegrationSystemFactory _integrationSystemFactory;
 
-        public IntegrationController(CoDeliveryContext context)
+        public IntegrationController(CoDeliveryContext context, IntegrationSystemFactory integrationSystemFactory)
         {
             _context = context;
+            _integrationSystemFactory = integrationSystemFactory;
         }
 
         public ActionResult Index()
@@ -57,11 +59,7 @@ namespace CoDelivery.Web.Controllers
             if (integration.User.UserName != this.UserName)
                 return Json(new { Success = false, Folders = false });
 
-            var configs = integration.Settings;
-
-            var integrationSystem = new DropBoxIntegration(configs);
-
-            var folders = integration.GetFolders(integrationSystem, "/");
+            var folders = integration.GetFolders(_integrationSystemFactory, "/");
 
             return Json(new { Success = true, Folders = folders }, JsonRequestBehavior.AllowGet);
         }

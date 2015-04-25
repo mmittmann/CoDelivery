@@ -49,16 +49,9 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bi
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bin\Release\Newtonsoft.Json.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bin\Release\RestSharp.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.csprojResolveAssemblyReference.cache
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.DatabaseCreated.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.DatabaseCreated2.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.Addnameandemailtouser.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.Renamemembers.resources
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.csproj.GenerateResource.Cache
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.pdb
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.addrecipe.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.addrecipe2.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.addrecipe3.resources
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bin\Release\Common.Logging.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bin\Release\CSharp.GitHub.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bin\Release\Ftp.dll
@@ -72,9 +65,4 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bi
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bin\Release\Spring.Rest.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bin\Release\Spring.Social.Core.pdb
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\bin\Release\Spring.Social.Core.xml
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.AdicionadaapropriedadeNAMEnasintegrações.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.CriacaoTabelaMigrationRecipe.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.Arriba.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.Arriba2.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.Arriba3.resources
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.Arriba4.resources
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Core\obj\Release\CoDelivery.Core.Migrations.FirstMigration.resources

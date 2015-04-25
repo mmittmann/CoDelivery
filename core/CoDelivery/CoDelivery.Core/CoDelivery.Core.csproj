@@ -118,57 +118,9 @@
     <Compile Include="Infra\IntegrationSystems\IIntegrationSystem.cs" />
     <Compile Include="Infra\IntegrationSystems\DropBoxIntegration.cs" />
     <Compile Include="Infra\IntegrationSystems\IntegrationSystemFactory.cs" />
-    <Compile Include="Migrations\201503290547212_Adicionada a propriedade NAME nas integrações.cs" />
-    <Compile Include="Migrations\201503290547212_Adicionada a propriedade NAME nas integrações.Designer.cs">
-      <DependentUpon>201503290547212_Adicionada a propriedade NAME nas integrações.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201504060354045_CriacaoTabelaMigrationRecipe.cs" />
-    <Compile Include="Migrations\201504060354045_CriacaoTabelaMigrationRecipe.Designer.cs">
-      <DependentUpon>201504060354045_CriacaoTabelaMigrationRecipe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Arriba.cs" />
-    <Compile Include="Migrations\Arriba.Designer.cs">
-      <DependentUpon>Arriba.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Arriba2.cs" />
-    <Compile Include="Migrations\Arriba2.Designer.cs">
-      <DependentUpon>Arriba2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Arriba3.cs" />
-    <Compile Include="Migrations\Arriba3.Designer.cs">
-      <DependentUpon>Arriba3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\DatabaseCreated.cs" />
-    <Compile Include="Migrations\DatabaseCreated.Designer.cs">
-      <DependentUpon>DatabaseCreated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\DatabaseCreated2.cs" />
-    <Compile Include="Migrations\DatabaseCreated2.Designer.cs">
-      <DependentUpon>DatabaseCreated2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Addnameandemailtouser.cs" />
-    <Compile Include="Migrations\Addnameandemailtouser.Designer.cs">
-      <DependentUpon>Addnameandemailtouser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Renamemembers.cs" />
-    <Compile Include="Migrations\Renamemembers.Designer.cs">
-      <DependentUpon>Renamemembers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\addrecipe.cs" />
-    <Compile Include="Migrations\addrecipe.Designer.cs">
-      <DependentUpon>addrecipe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\addrecipe2.cs" />
-    <Compile Include="Migrations\addrecipe2.Designer.cs">
-      <DependentUpon>addrecipe2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\addrecipe3.cs" />
-    <Compile Include="Migrations\addrecipe3.Designer.cs">
-      <DependentUpon>addrecipe3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Arriba4.cs" />
-    <Compile Include="Migrations\Arriba4.Designer.cs">
-      <DependentUpon>Arriba4.cs</DependentUpon>
+    <Compile Include="Migrations\201504200548203_FirstMigration.cs" />
+    <Compile Include="Migrations\201504200548203_FirstMigration.Designer.cs">
+      <DependentUpon>201504200548203_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -180,49 +132,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503290547212_Adicionada a propriedade NAME nas integrações.resx">
-      <DependentUpon>201503290547212_Adicionada a propriedade NAME nas integrações.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201504060354045_CriacaoTabelaMigrationRecipe.resx">
-      <DependentUpon>201504060354045_CriacaoTabelaMigrationRecipe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\DatabaseCreated.resx">
-      <DependentUpon>DatabaseCreated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\DatabaseCreated2.resx">
-      <DependentUpon>DatabaseCreated2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Addnameandemailtouser.resx">
-      <DependentUpon>Addnameandemailtouser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Renamemembers.resx">
-      <DependentUpon>Renamemembers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\addrecipe.resx">
-      <DependentUpon>addrecipe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\addrecipe2.resx">
-      <DependentUpon>addrecipe2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\addrecipe3.resx">
-      <DependentUpon>addrecipe3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Arriba.resx">
-      <DependentUpon>Arriba.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Arriba2.resx">
-      <DependentUpon>Arriba2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Arriba3.resx">
-      <DependentUpon>Arriba3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\Arriba4.resx">
-      <DependentUpon>Arriba4.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_Readme\Spring.Rest.txt" />
     <Content Include="App_Readme\Spring.Social.Core.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201504200548203_FirstMigration.resx">
+      <DependentUpon>201504200548203_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

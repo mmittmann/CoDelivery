@@ -9,16 +9,16 @@ namespace CoDelivery.Core.Infra.IntegrationSystems
 
         public FtpIntegration(IReadOnlyDictionary<string, string> settings)
         {
-            var user = settings["user"];
-            var password = settings["password"];
-            var host = settings["host"];
-            var port = int.Parse(settings["port"]);
+            var user = settings["User"];
+            var password = settings["Password"];
+            var host = settings["Host"];
+            var port = int.Parse(settings["Port"]);
             _ftpClient = new FtpClient(host, user, password, port);
         }
 
         public List<string> GetFolders(string path)
         {
-            
+            return _ftpClient.GetFolders(path);
         }
     }
 }

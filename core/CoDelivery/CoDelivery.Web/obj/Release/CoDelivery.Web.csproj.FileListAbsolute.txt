@@ -146,7 +146,6 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\WebActivatorEx.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\WebGrease.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\DropNet.dll
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\RestSharp.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\CoDelivery.Core.pdb
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\AutoMapper.pdb
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\AutoMapper.xml
@@ -178,9 +177,13 @@ C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\RestSharp.xml
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\obj\Release\CoDelivery.Web.csprojResolveAssemblyReference.cache
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\obj\Release\CoDelivery.Web.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\obj\Release\CoDelivery.Web.pdb
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\Ftp.dll
 C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\Ftp.xml
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\CoDelivery.IntegrationTests.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\CoDelivery.IntegrationTests.pdb
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\Elmah.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\Elmah.Mvc.dll
+C:\Users\Murilo\Projetos\Faculdade\CoDelivery\core\CoDelivery\CoDelivery.Web\bin\RestSharp.dll
