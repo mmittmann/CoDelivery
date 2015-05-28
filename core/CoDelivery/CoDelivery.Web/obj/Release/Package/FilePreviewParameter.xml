@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="CoDelivery" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Murilo\\Projetos\\Faculdade\\CoDelivery\\core\\CoDelivery\\CoDelivery\.Web\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Murilo\\Projetos\\Faculdade\\CoDelivery\\core\\CoDelivery\\CoDelivery\.Web\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="CoDeliveryContext-Web.config Connection String" description="" value="Data Source=177.55.98.91;Initial Catalog=codelivery;User ID=sa;Password=7#uqS3P$M%" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Murilo\\Projetos\\Faculdade\\CoDelivery\\core\\CoDelivery\\CoDelivery\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CoDeliveryContext']/@connectionString" />
+  </parameter>
+</parameters>

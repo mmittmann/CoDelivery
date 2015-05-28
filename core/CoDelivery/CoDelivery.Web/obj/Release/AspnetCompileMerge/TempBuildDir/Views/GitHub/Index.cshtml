@@ -1,0 +1,17 @@
+﻿@model CoDelivery.Web.Models.GitHubModel
+
+@{
+    ViewBag.Title = "GitHub Account";
+}
+
+<h2>Soncronize sua conta do Github</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m => m.User)
+    @Html.EditorFor(m => m.Password)
+    @Html.EditorFor(m => m.SshKey)
+
+    @Html.ActionLink("Voltar", "Index", "Integration", new { @class = "btn btn-default" })
+    <input type="button" value="Criar" class="btn btn-primary" />
+}

@@ -1,0 +1,20 @@
+﻿@model CoDelivery.Web.Models.SignUpModel
+
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Cadadastre-se</h2>
+
+@using (Html.BeginForm())
+{
+        @Html.EditorFor(t => t.Name) 
+        @Html.EditorFor(t => t.Email)
+        @Html.EditorFor(t => t.User)
+        @Html.EditorFor(t => t.Password)
+
+    <div class="form-group">
+        <a href="/Login/Index" class="btn">Voltar</a>
+        <input type="submit" value="Cadastrar" class="btn btn-success" />
+    </div>
+}

@@ -1,0 +1,60 @@
+﻿@model CoDelivery.Web.Models.DashboardModel
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+<hr />
+<div class="col-md-6">
+    <div class="col-md-6">
+        <span class="h4"> @Model.Integrations.Label</span>
+    </div>
+
+    <div class="col-md-6">
+        <div class="col-md-6">
+            <a href="/@Model.Integrations.Name" class="btn btn-primary btn-circle" title="Visualizar">
+                <i class="glyphicon glyphicon-eye-open"></i>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="/@Model.Integrations.Name/Create" class="btn btn-primary btn-circle" title="Adicionar novo">
+                <i class="glyphicon glyphicon-plus"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <p class="h1 text-center">
+            @Model.Integrations.List.Count
+        </p>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="col-md-6">
+        <span class="h4"> @Model.Recipes.Label</span>
+    </div>
+    <div class="col-md-6">
+        <div class="col-md-6">
+            <a href="/@Model.Recipes.Name" class="btn btn-circle btn-primary" title="Visualizar">
+                <i class="glyphicon glyphicon-eye-open"></i>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="/@Model.Recipes.Name/Create" class="btn btn-primary btn-circle" title="Adicionar novo">
+                <i class="glyphicon glyphicon-plus"></i>
+            </a>
+        </div>
+
+    </div>
+    <div class="col-md-12">
+        <p class="h1 text-center">
+            @Model.Recipes.List.Count
+        </p>
+    </div>
+</div>
+
+
+
+

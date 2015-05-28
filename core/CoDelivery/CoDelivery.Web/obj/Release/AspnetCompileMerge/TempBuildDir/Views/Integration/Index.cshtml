@@ -1,0 +1,33 @@
+﻿@model List<CoDelivery.Core.Entities.Integration>
+
+@{
+    ViewBag.Title = "Integrações";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Integrações</h2>
+    </div>
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.IntegrationSystem.ToString()</td>
+                <td class="text-success">
+                    <i class="glyphicon glyphicon-check"></i> Ok
+                </td>
+                <td>
+                    <a href="/Integration/Delete/@item.Id">
+                        <i class="glyphicon glyphicon-remove"></i> Excluir
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <div class="panel-footer text-right">
+        <a href="/Dashboard" class="btn btn-default">Voltar</a>
+        <a href="/Integration/Create" class="btn btn-success">Criar nova</a>
+    </div>
+</div>

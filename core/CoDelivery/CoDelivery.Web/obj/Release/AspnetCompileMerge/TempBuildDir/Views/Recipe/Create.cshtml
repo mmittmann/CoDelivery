@@ -1,0 +1,123 @@
+﻿@using CoDelivery.Web.Models
+@model RecipeModel
+
+@{
+    ViewBag.Title = "Criar receita";
+}
+
+<h2>Criar nova receita:</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-3">
+            @Html.EditorFor(m => m.Name)
+        </div>
+        <div class="col-md-3">
+            <label>De</label>
+            <select class="form-control" id="integration-from" name="IntegrationSettings[0].key">
+                <option>--Selecione a integração--</option>
+
+                @foreach (var item in (List<IntegrationModel>)ViewBag.Integrations)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <hr />
+            <div>
+                <select class="hidden form-control" id="integration-details-from" name="integrationsettings[0].value"></select>
+                <br/>
+                <div class="loader hide" id="loader-from"></div>
+            </div>
+        </div>
+
+        <div class="col-md-1">
+            <br/>
+            <br/>
+            <p class="text-center">
+                <i class="glyphicon glyphicon-arrow-right"></i>
+            </p>
+        </div>
+
+        <div class="col-md-3">
+            <label>Para</label>
+            <select class="form-control" id="integration-to" name="integrationsettings[1].key">
+                <option>--Selecione a integração--</option>
+
+                @foreach (var item in (List<IntegrationModel>)ViewBag.Integrations)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <hr />
+            <div>
+                <select class="hidden form-control" id="integration-details-to" name="integrationsettings[1].value"></select>
+                <br/>
+                <div class="loader hide" id="loader-to"></div>
+            </div>
+        </div>
+    </div>
+
+    @Html.ActionLink("Voltar", "Index", "Recipe", new { @class = "btn btn-default" })
+    <input type="submit" value="Criar" class="btn btn-primary" />
+}
+
+
+@section scripts{
+    <script>
+
+        
+
+        $('#integration-from').change(function () {
+            $('#loader-from').removeClass('hide').show(); 
+
+
+            var integrationId = $(this).val();
+
+            var folders = [];
+            $.getJSON("/integration/getconfigdetails/", { id: integrationId })
+            .done(function (data) {
+                $('#integration-details-from').html("--Selecione a integração--");
+
+
+                folders = data.Folders;
+                for (var i = 0; i < folders.length; i++) {
+                    $("#integration-details-from").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
+                }
+                $("#integration-details-from").removeClass('hidden').show();
+            })
+            .fail(function () {
+                folders = [];
+            }).always(function () {
+                $('#loader-from').hide();
+            });
+        });
+
+        $('#integration-to').change(function () {
+            $('#loader-to').removeClass('hide').show();
+
+            var integrationId = $(this).val();
+
+            var folders = [];
+            var xhr = $.getJSON("/integration/getconfigdetails/", { id: integrationId });
+            xhr.done(function (data) {
+                $('#integration-details-to').html("--Selecione a integração--");
+
+                folders = data.Folders;
+
+                for (var i = 0; i < folders.length; i++) {
+                    $("#integration-details-to").append('<option value="' + folders[i] + '">' + folders[i] + '</option>');
+                }
+                $("#integration-details-to").removeClass('hidden').show();
+            });
+            xhr.fail(function() {
+                folders = [];
+            });
+            xhr.always(function() {
+                $('#loader-to').hide();
+            });
+
+        });
+    </script>
+}
+
