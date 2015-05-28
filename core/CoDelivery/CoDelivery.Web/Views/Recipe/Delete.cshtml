@@ -1,0 +1,21 @@
+﻿@model CoDelivery.Web.Models.RecipeModel
+
+@{
+    ViewBag.Title = "Excluir receita";
+}
+
+@if (!ViewContext.ViewData.ModelState.IsValid)
+{
+    <p>ViewContext.ViewData.ModelState[0].Errors[0].ErrorMessage</p>
+}
+else
+{
+    <h2>Excluir receita <b>@Model.Name</b>?</h2>
+
+    using (Html.BeginForm("Delete", "Recipe"))
+    {
+        @Html.HiddenFor(m => m.Id)
+        <a href="/recipe" class="btn btn-default">Voltar</a>
+        <input type="submit" class="btn btn-danger" value="Excluir" />
+    }
+}

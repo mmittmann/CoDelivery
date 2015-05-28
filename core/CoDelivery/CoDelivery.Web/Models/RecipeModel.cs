@@ -11,5 +11,6 @@ namespace CoDelivery.Web.Models
         public string Name { get; set; }
 
         public Dictionary<int, string> IntegrationSettings { get; set; }
+        public List<string> Integrations { get; set; }
     }
 }
