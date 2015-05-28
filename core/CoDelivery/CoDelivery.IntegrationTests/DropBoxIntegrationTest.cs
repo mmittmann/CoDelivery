@@ -28,7 +28,7 @@ namespace CoDelivery.IntegrationTests
         [TestMethod]
         public void ShouldListsAllFolders()
         {
-            var contentFolder = _dropBoxClient.GetFolderContent("/");
+            var contentFolder = _dropBoxClient.GetFolderList("/");
 
             Assert.IsTrue(contentFolder.Count > 0);
         }

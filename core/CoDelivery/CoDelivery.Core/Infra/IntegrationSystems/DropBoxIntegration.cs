@@ -16,7 +16,17 @@ namespace CoDelivery.Core.Infra.IntegrationSystems
 
         public List<string> GetFolders(string path)
         {
-            return _dropBoxClient.GetFolderContent(path);
+            return _dropBoxClient.GetFolderList(path);
+        }
+
+        public IDictionary<string, byte[]> GetFiles(string path)
+        {
+            return _dropBoxClient.GetFiles(path);
+        }
+
+        public void UploadFile(string fileName, string path, byte[] fileContent)
+        {
+            _dropBoxClient.UploadFile(path, fileName, fileContent);
         }
     }
 }

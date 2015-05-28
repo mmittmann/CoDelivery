@@ -20,5 +20,15 @@ namespace CoDelivery.Core.Infra.IntegrationSystems
         {
             return _ftpClient.GetFolders(path);
         }
+
+        public IDictionary<string, byte[]> GetFiles(string path)
+        {
+            return _ftpClient.GetFiles(path);
+        }
+
+        public void UploadFile(string fileName, string path, byte[] fileContent)
+        {
+            _ftpClient.UploadFile(path, fileName, fileContent);
+        }
     }
 }

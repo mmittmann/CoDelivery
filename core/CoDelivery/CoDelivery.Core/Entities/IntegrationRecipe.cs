@@ -7,8 +7,8 @@ namespace CoDelivery.Core.Entities
     public class IntegrationRecipe
     {
         public int Id { get; set; }
-        public Integration Integration { get; set; }
-        public Recipe Recipe { get; set; }
+        public virtual Integration Integration { get; set; }
+        public virtual Recipe Recipe { get; set; }
         
         [NotMapped]
         public Dictionary<string, string> Configurations { get; set; }

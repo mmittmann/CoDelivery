@@ -14,6 +14,7 @@ namespace CoDelivery.Core.Entities
         public DbSet<User> Users { get; set; }
         public DbSet<Integration> Integrations { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<IntegrationRecipe> IntegrationRecipes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

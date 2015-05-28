@@ -3,6 +3,7 @@ using System.Linq;
 using System.Management.Automation;
 using CoDelivery.Core.CoreModels;
 using DropNet;
+using Microsoft.Ajax.Utilities;
 
 namespace CoDelivery.Core.Infra.Clients
 {
@@ -58,7 +59,7 @@ namespace CoDelivery.Core.Infra.Clients
             return _dropBoxClient.GetFile(path);
         }
 
-        public List<string> GetFolderContent(string path)
+        public List<string> GetFolderList(string path)
         {
             var metaData = _dropBoxClient.GetMetaData(path);
             var content = metaData.Contents;
@@ -76,5 +77,42 @@ namespace CoDelivery.Core.Infra.Clients
                 Email = information.email
             };
         }
+
+        public Dictionary<string, byte[]> GetFiles(string path)
+        {
+            path = FixPath(path);
+
+            var files = new Dictionary<string, byte[]>();
+
+            var metaData = _dropBoxClient.GetMetaData(path);
+            var content = metaData.Contents;
+
+            foreach (var c in content)
+            {
+                if (!c.Is_Dir)
+                {
+                    var filename = path + c.Name;
+                    var file = _dropBoxClient.GetFile(filename);
+                    files.Add(filename, file);
+                }
+            }
+
+            return files;
+        }
+
+        public void UploadFile(string path, string fileName, byte[] fileContet)
+        {
+            _dropBoxClient.UploadFile(path, fileName, fileContet);
+        }
+
+        private string FixPath(string path)
+        {
+            if (path.EndsWith("/"))
+                return path;
+
+            return path + "/";
+        }
+
+
     }
 }
